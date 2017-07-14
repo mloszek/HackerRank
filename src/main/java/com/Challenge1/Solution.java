@@ -3,35 +3,19 @@ package com.Challenge1;
 import java.util.Scanner;
 
 /**
- * finding absolute value of subtraction of diagonal sum of elements in NxN size table
+ * Diagonal Difference
  */
 public class Solution {
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
-//        int row = scanner.nextInt();
-//        scanner.nextLine();
-//
-//        String line1 = scanner.nextLine();
-//        String line2 = scanner.nextLine();
-//        String line3 = scanner.nextLine();
-
-        int row = 3;
-        String line1 = "11 2 4";
-        String line2 = "4 5 6";
-        String line3 = "10 8 -12";
-
-        String input = line1.concat(" ").concat(line2).concat(" ").concat(line3);
-        String[] splitted = input.split(" ");
+        int row = scanner.nextInt();
 
         int[][] list = new int[row][row];
 
-        int splittedIndex = 0;
-
         for(int i = 0; i < row; i++){
             for(int j = 0; j < row; j++) {
-                list[i][j] = Integer.parseInt(splitted[splittedIndex]);
-                splittedIndex++;
+                list[i][j] = scanner.nextInt();
             }
         }
 
