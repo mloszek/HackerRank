@@ -14,9 +14,7 @@ public class Solution {
         int taxPercent = scan.nextInt();
         scan.close();
 
-        double result = mealCost + (mealCost * ((double) tipPercent / 100)) + (mealCost * ((double) taxPercent / 100));
-
-        int totalCost = (int) Math.round(result);
+        int totalCost = (int) Math.round(mealCost + (mealCost * ((double) tipPercent / 100)) + (mealCost * ((double) taxPercent / 100)));
 
         System.out.println("The total meal cost is " + totalCost + " dollars.");
 
