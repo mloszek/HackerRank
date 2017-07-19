@@ -3,7 +3,7 @@ package com.Challenge1;
 import java.util.Scanner;
 
 /**
- * Diagonal Difference
+ * Warmup: Diagonal Difference
  */
 public class Solution {
     public static void main(String[] args){
