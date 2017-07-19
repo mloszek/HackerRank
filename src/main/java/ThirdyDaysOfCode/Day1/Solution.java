@@ -1,4 +1,4 @@
-package com.Day1;
+package ThirdyDaysOfCode.Day1;
 
 import java.util.Scanner;
 

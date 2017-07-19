@@ -1,9 +1,9 @@
-package com.Day4;
+package ThirdyDaysOfCode.Day4;
 
 import java.util.Scanner;
 
 /**
- * Day 3 of 30 days challenge
+ * Day 4 of 30 days challenge
  */
 public class Solution {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package com.Day4;
+package ThirdyDaysOfCode.Day4;
 
 /**
  * Additional class for task
