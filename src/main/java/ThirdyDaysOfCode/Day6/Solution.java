@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Day 5 of 30 days challenge
+ * Day 6 of 30 days challenge
  */
 public class Solution {
     public static void main(String[] args) {
@@ -16,14 +16,7 @@ public class Solution {
 
         for (int i = 0; i < amount; i++) {
             givenStrings.add(scanner.next());
-//            scanner.nextLine();
         }
-
-//        String input = scanner.nextLine();
-//
-//        String[] splitted = input.split("\n");
-//
-
 
         for (String s: givenStrings) {
             String even = "";
