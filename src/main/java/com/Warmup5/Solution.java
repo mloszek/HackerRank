@@ -1,7 +1,6 @@
-package com.Challenge5;
+package com.Warmup5;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 

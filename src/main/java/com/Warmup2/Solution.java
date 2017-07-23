@@ -1,4 +1,4 @@
-package com.Challenge2;
+package com.Warmup2;
 
 import java.util.ArrayList;
 import java.util.List;

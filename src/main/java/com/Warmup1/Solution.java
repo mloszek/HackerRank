@@ -1,4 +1,4 @@
-package com.Challenge1;
+package com.Warmup1;
 
 import java.util.Scanner;
 
