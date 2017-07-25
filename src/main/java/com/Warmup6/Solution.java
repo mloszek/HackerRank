@@ -3,7 +3,7 @@ package com.Warmup6;
 import java.util.Scanner;
 
 /**
- * Warmup:
+ * Warmup: Time conversion
  */
 public class Solution {
     public static void main(String[] args) {
@@ -22,9 +22,11 @@ public class Solution {
         if (splitted[2].length() < 4)
             return s;
 
-        if ((Integer.parseInt(splitted[0]) < 12) && (String.valueOf(splitted[2].charAt(splitted[2].length() - 2)).toLowerCase().equals("p")))
+        if ((Integer.parseInt(splitted[0]) < 12) &&
+                (String.valueOf(splitted[2].charAt(splitted[2].length() - 2)).toLowerCase().equals("p")))
             splitted[0] = String.valueOf(Integer.parseInt(splitted[0]) + 12);
-        if ((Integer.parseInt(splitted[0]) == 12) && (String.valueOf(splitted[2].charAt(splitted[2].length() - 2)).toLowerCase().equals("a")))
+        if ((Integer.parseInt(splitted[0]) == 12) &&
+                (String.valueOf(splitted[2].charAt(splitted[2].length() - 2)).toLowerCase().equals("a")))
             splitted[0] = "00";
 
         return splitted[0] + ":" + splitted[1] + ":"
