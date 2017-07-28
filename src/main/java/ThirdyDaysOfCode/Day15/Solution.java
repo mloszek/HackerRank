@@ -1,6 +1,7 @@
 package ThirdyDaysOfCode.Day15;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,16 +30,18 @@ public class Solution {
         }
     }
 
+    static LinkedList<Node> list = new LinkedList<>();
+
     public static Node insert(Node head, int data) {
 
-        if (head == null)
-            head = new Node(data);
+        if (list.isEmpty())
+        list.add(new Node(data));
         else {
-            head.next = new Node(data);
-
+            Node node = new Node(data);
+            list.getLast().next = node;
+            list.add(node);
         }
 
-
-        return head;
+        return list.getFirst();
     }
 }
