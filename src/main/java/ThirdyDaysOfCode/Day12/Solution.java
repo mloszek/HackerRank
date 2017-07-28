@@ -3,7 +3,7 @@ package ThirdyDaysOfCode.Day12;
 import java.util.Scanner;
 
 /**
- * Day 11 of 30 days challenge
+ * Day 12 of 30 days challenge
  */
 public class Solution {
     public static void main(String[] args) {
