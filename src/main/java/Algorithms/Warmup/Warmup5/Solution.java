@@ -1,4 +1,4 @@
-package com.Warmup5;
+package Algorithms.Warmup.Warmup5;
 
 import java.util.ArrayList;
 import java.util.List;

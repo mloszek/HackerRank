@@ -1,4 +1,4 @@
-package com.Warmup1;
+package Algorithms.Warmup.Warmup1;
 
 import java.util.Scanner;
 
