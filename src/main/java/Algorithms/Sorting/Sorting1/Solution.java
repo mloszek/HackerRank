@@ -45,10 +45,10 @@ public class Solution {
         i = x;
         j = y;
         do {
-            while (isBigger(pivotValue, table[i])) {
+            while (!isBigger(table[i], pivotValue)) {
                 i++;
             }
-            while (isBigger(table[j], pivotValue)) {
+            while (!isBigger(pivotValue, table[j])) {
                 j--;
             }
             if (i <= j) {
