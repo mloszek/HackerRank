@@ -21,6 +21,7 @@ public class QuicksortThread extends Thread {
     public void run() {
         quickSort(0, tab.size() - 1, tab);
     }
+
     private static void quickSort(int x, int y, List<String> table) {
         int i, j;
         String temp;
@@ -62,7 +63,6 @@ public class QuicksortThread extends Thread {
                 }
             }
         }
-
         return true;
     }
 }
