@@ -10,9 +10,6 @@ public class Solution {
 
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        String temp = null;
-        List<String> smaller = new ArrayList<>();
-        List<String> bigger = new ArrayList<>();
 
         String[] tab = new String[n];
 
@@ -20,39 +17,45 @@ public class Solution {
             tab[i] = in.next();
         }
 
-//        for (String s : tab) {
-//            if (s.length() > 100)
-//                bigger.add(s);
-//            else
-//                smaller.add(s);
-//        }
-//
-//
-//        QuicksortThread quicksortThread1 = new QuicksortThread(bigger);
-//        QuicksortThread quicksortThread2 = new QuicksortThread(smaller);
-//
-//        quicksortThread1.start();
-//        quicksortThread2.start();
-//
-//        quicksortThread1.join();
-//        quicksortThread2.join();
-//
-//        quicksortThread2.getTab().stream().forEach(System.out::println);
-
         Comparator<String> isBigger = (a, b) -> {
 
-            if (a.length() > b.length())
-                return 1;
-            else if (a.length() < b.length())
-                return -1;
-            else {
-                for (int i = 0; i < a.length(); i++) {
-                    if (Integer.parseInt(String.valueOf(a.charAt(i))) < Integer.parseInt(String.valueOf(b.charAt(i)))) {
-                        return -1;
+
+            if (a.length() > 18 || b.length() > 18) {
+
+                char[] charA = a.toCharArray();
+                char[] charB = b.toCharArray();
+
+                if (charA.length > charB.length)
+                    return 1;
+                else if (charA.length < charB.length)
+                    return -1;
+                else {
+                    for (int i = 0; i < charA.length; i++) {
+
+                        int A = Integer.parseInt(String.valueOf(charA[i]));
+                        int B = Integer.parseInt(String.valueOf(charB[i]));
+
+                        if (A > B)
+                            return 1;
+                        else if (A < B)
+                            return -1;
                     }
+                    return 0;
                 }
+
+            } else {
+
+                long longA = Long.parseLong(a);
+                long longB = Long.parseLong(b);
+
+                if (longA - longB == 0)
+                    return 0;
+                else if (longA - longB > 0)
+                    return 1;
+                else
+                    return -1;
+
             }
-            return 0;
         };
 
         Arrays.stream(tab)
