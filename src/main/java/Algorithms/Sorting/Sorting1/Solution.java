@@ -19,7 +19,6 @@ public class Solution {
 
         Comparator<String> isBigger = (a, b) -> {
 
-
             if (a.length() > 18 || b.length() > 18) {
 
                 char[] charA = a.toCharArray();

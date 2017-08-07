@@ -1,10 +1,12 @@
-package ThirdyDaysOfCode.Day22;
+package ThirdyDaysOfCode.Day23;
 
+import ThirdyDaysOfCode.Day22.Node;
+
+import java.util.LinkedList;
 import java.util.Scanner;
 
-
 /**
- * Day 22 of 30 days challenge
+ * Day 23 of 30 days challenge
  */
 public class Solution {
     public static void main(String args[]) {
@@ -12,16 +14,17 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
         Node root = null;
+
         while (T-- > 0) {
             int data = sc.nextInt();
             root = insert(root, data);
         }
 
-        int height = getHeight(root);
-        System.out.println(height);
+        levelOrder(root);
     }
 
     public static Node insert(Node root, int data) {
+
         if (root == null) {
             return new Node(data);
         } else {
@@ -37,15 +40,23 @@ public class Solution {
         }
     }
 
-    public static int getHeight(Node root) {
+    static void levelOrder(Node root) {
 
-            return root == null ? -1 : (1 + myMax(getHeight(root.left), getHeight(root.right)));
+        LinkedList<Node> queue = new LinkedList<>();
 
-    }
+        if (root != null)
+            queue.add(root);
 
-    public static int myMax (int a, int b){
+        while (!queue.isEmpty()) {
+            Node node = queue.getFirst();
+            queue.removeFirst();
 
-        return (a > b) ? a : b;
+            System.out.print(node.data + " ");
+
+            if (node.left != null)
+                queue.add(node.left);
+            if (node.right != null)
+                queue.add(node.right);
+        }
     }
 }
-
