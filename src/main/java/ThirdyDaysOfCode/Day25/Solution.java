@@ -17,12 +17,19 @@ public class Solution {
 
     public static void isPrime(int a) {
 
-        if (a <= 2)
+        if (a < 2)
             System.out.println("Not prime");
+        else if (a == 2)
+            System.out.println("Prime");
+        else if (a == 3)
+            System.out.println("Prime");
         else {
-
-            for (int i = 2; i < a; i++) {
-                if (a % i == 0) {
+            for (int i = 0; i < a; i++) {
+                if (a % ((6 * i) + 1) == 0) {
+                    System.out.println("Not prime");
+                    break;
+                }
+                if (a % ((6 * i) - 1) == 0) {
                     System.out.println("Not prime");
                     break;
                 }
