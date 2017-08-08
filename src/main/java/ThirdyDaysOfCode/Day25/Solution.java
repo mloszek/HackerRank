@@ -24,17 +24,19 @@ public class Solution {
         else if (a == 3)
             System.out.println("Prime");
         else {
-            for (int i = 0; i < a; i++) {
-                if (a % ((6 * i) + 1) == 0) {
+            for (int i = 2; i <= Math.sqrt(a); i++) {
+                if (a % i == 0){
                     System.out.println("Not prime");
                     break;
                 }
-                if (a % ((6 * i) - 1) == 0) {
-                    System.out.println("Not prime");
-                    break;
-                }
-                if ((i == a - 1) && (a % i != 0))
+                if ((i > (Math.sqrt(a) - 1)) && (a % i != 0)) {
                     System.out.println("Prime");
+                    break;
+                }
+                if ((i == Math.sqrt(a)) && (a % i != 0)) {
+                    System.out.println("Prime");
+                    break;
+                }
             }
         }
     }
