@@ -25,9 +25,25 @@ public class Solution {
 //        System.out.println();
 //        Arrays.stream(expectedDate).forEach(System.out::println);
 
-        if (returnDate[2] == expectedDate[2] && returnDate[1] == expectedDate[1]){
+        System.out.println(howMuch(returnDate, expectedDate));
 
-        }
+    }
+
+    public static int howMuch (int[] a, int[] b){
+
+        int hackos = 0;
+        int aDays = dayCounter(a);
+        int bDays = dayCounter(b);
+
+
+        return hackos;
+    }
+
+    public static int dayCounter(int[] a){
+
+        int daysFromYears = 365 * a[2];
+
+
 
     }
 }
