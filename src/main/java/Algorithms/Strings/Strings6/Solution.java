@@ -19,17 +19,23 @@ public class Solution {
     public static void doesContains(String string){
 
         char[] temp  = "hackerrank".toCharArray();
-        int charIndex = 0;
+        char[] letters = string.toCharArray();
+        int tempIndex = 0;
         int stringIndex = 0;
 
-        while (stringIndex < string.length()){
-
-            if (string.charAt(stringIndex) == temp[charIndex]){
-                charIndex++;
+        for (int i = 0; i < string.length(); i++) {
+            if (letters[i] == temp[tempIndex]){
+                tempIndex++;
             }
-            stringIndex++;
 
+            if (tempIndex == temp.length) {
+                System.out.println("YES");
+                break;
+            }
         }
 
+        if (tempIndex < temp.length) {
+            System.out.println("NO");
+        }
     }
 }

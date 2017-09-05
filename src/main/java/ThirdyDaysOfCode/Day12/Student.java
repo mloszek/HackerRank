@@ -32,7 +32,7 @@ class Student extends Person {
         if (result < 40)
             return "T";
 
-        return "shit";
+        return "task";
 
     }
 }
