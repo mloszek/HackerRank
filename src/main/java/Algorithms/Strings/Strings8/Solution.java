@@ -9,57 +9,48 @@ public class Solution {
 
     static Map<Character, Integer> letterMap = createLetterMap();
     static Scanner in = new Scanner(System.in);
-    static List<Integer> queries = new ArrayList<>();
+    static List<Integer> integerValueOfUniforms = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        String s = in.next();
+        splitToUniformStrings(in.next());
         int n = in.nextInt();
 
         for (int a0 = 0; a0 < n; a0++) {
-            queries.add(in.nextInt());
-        }
-
-        checkWeights(s);
-    }
-
-    static void checkWeights(String string) {
-
-        List<Integer> integerValueOfUniforms = splitToUniformStrings(string);
-
-        for (Integer i : queries) {
-            if (integerValueOfUniforms.contains(i))
+            if (integerValueOfUniforms.contains(in.nextInt()))
                 System.out.println("Yes");
             else
                 System.out.println("No");
         }
     }
 
-    static List<Integer> splitToUniformStrings(String string) {
+    static void splitToUniformStrings(String string) {
 
-        String[] splitted = string.split("");
-        List<Integer> tempList = new ArrayList<>();
-        String temp = "";
+        char[] splitted = string.toCharArray();
 
-        for (int i = 0; i < splitted.length; i++) {
-            if (temp == "") {
-                temp = splitted[i];
-                tempList.add(swapStringToInt(temp));
+        StringBuilder temp = new StringBuilder();
+
+        for (int i = 0; i < string.length(); i++) {
+            if (temp.length() == 0) {
+                wordCare(temp, splitted[i]);
             } else {
-                if (temp.contains(splitted[i])) {
-                    temp += splitted[i];
-                    tempList.add(swapStringToInt(temp));
+                if (temp.charAt(temp.length() - 1) == splitted[i]) {
+                    wordCare(temp, splitted[i]);
                 } else {
-                    temp = splitted[i];
-                    tempList.add(swapStringToInt(temp));
+                    temp.setLength(0);
+                    wordCare(temp, splitted[i]);
                 }
             }
         }
-
-        return tempList;
     }
 
-    static Integer swapStringToInt(String word) {
+    static void wordCare (StringBuilder temp, char a){
+
+        temp.append(a);
+        integerValueOfUniforms.add(swapStringToInt(temp));
+    }
+
+    static Integer swapStringToInt(StringBuilder word) {
 
         return word.length() * letterMap.get(word.charAt(0));
     }
