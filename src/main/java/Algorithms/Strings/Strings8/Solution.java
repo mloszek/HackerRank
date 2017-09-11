@@ -7,11 +7,12 @@ import java.util.*;
  */
 public class Solution {
 
-    static Map<Character, Integer> letterMap = createLetterMap();
-    static Scanner in = new Scanner(System.in);
     static List<Integer> integerValueOfUniforms = new ArrayList<>();
+    static StringBuilder temp = new StringBuilder();
 
     public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
 
         splitToUniformStrings(in.next());
         int n = in.nextInt();
@@ -28,23 +29,21 @@ public class Solution {
 
         char[] splitted = string.toCharArray();
 
-        StringBuilder temp = new StringBuilder();
-
         for (int i = 0; i < string.length(); i++) {
             if (temp.length() == 0) {
-                wordCare(temp, splitted[i]);
+                wordCare(splitted[i]);
             } else {
                 if (temp.charAt(temp.length() - 1) == splitted[i]) {
-                    wordCare(temp, splitted[i]);
+                    wordCare(splitted[i]);
                 } else {
                     temp.setLength(0);
-                    wordCare(temp, splitted[i]);
+                    wordCare(splitted[i]);
                 }
             }
         }
     }
 
-    static void wordCare (StringBuilder temp, char a){
+    static void wordCare (char a){
 
         temp.append(a);
         integerValueOfUniforms.add(swapStringToInt(temp));
@@ -52,19 +51,6 @@ public class Solution {
 
     static Integer swapStringToInt(StringBuilder word) {
 
-        return word.length() * letterMap.get(word.charAt(0));
-    }
-
-    static Map<Character, Integer> createLetterMap() {
-
-        char[] lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        Map<Character, Integer> tempMap = new HashMap<>();
-
-        for (int i = 0; i < lowerCaseAlphabet.length; i++) {
-
-            tempMap.put(lowerCaseAlphabet[i], i + 1);
-        }
-
-        return tempMap;
+        return word.length() * (word.charAt(0) - 96);
     }
 }
