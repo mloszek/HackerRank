@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Solution {
 
-    static List<Integer> integerValueOfUniforms = new ArrayList<>();
+    static Set<Integer> integerValueOfUniforms = new HashSet<>();
     static StringBuilder temp = new StringBuilder();
 
     public static void main(String[] args) {
