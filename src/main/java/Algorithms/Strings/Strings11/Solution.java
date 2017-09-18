@@ -33,6 +33,7 @@ public class Solution {
             if (contains)
                 result++;
         }
+
         System.out.println(result);
     }
     
