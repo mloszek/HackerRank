@@ -8,7 +8,7 @@ import java.util.*;
 public class Solution {
 
     static Set<Integer> integerValueOfUniforms = new HashSet<>();
-    static StringBuilder temp = new StringBuilder();
+    static StringBuilder stringBuilder = new StringBuilder();
 
     public static void main(String[] args) {
 
@@ -30,13 +30,13 @@ public class Solution {
         char[] splitted = string.toCharArray();
 
         for (int i = 0; i < string.length(); i++) {
-            if (temp.length() == 0) {
+            if (stringBuilder.length() == 0) {
                 wordCare(splitted[i]);
             } else {
-                if (temp.charAt(temp.length() - 1) == splitted[i]) {
+                if (stringBuilder.charAt(stringBuilder.length() - 1) == splitted[i]) {
                     wordCare(splitted[i]);
                 } else {
-                    temp.setLength(0);
+                    stringBuilder.setLength(0);
                     wordCare(splitted[i]);
                 }
             }
@@ -45,8 +45,8 @@ public class Solution {
 
     static void wordCare (char a){
 
-        temp.append(a);
-        integerValueOfUniforms.add(swapStringToInt(temp));
+        stringBuilder.append(a);
+        integerValueOfUniforms.add(swapStringToInt(stringBuilder));
     }
 
     static Integer swapStringToInt(StringBuilder word) {
