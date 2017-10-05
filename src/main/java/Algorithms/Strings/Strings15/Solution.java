@@ -1,5 +1,7 @@
 package Algorithms.Strings.Strings15;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.*;
 
 /**
@@ -7,8 +9,7 @@ import java.util.*;
  */
 public class Solution {
 
-    private static int min = 0;
-    private static int max = 0;
+    private static List<Integer> results;
     private static List<String> geneList;
     private static List<Integer> healthList;
 
@@ -16,6 +17,7 @@ public class Solution {
 
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
+        results = new ArrayList<>();
         geneList = new ArrayList<>();
         healthList = new ArrayList<>();
 
@@ -36,7 +38,9 @@ public class Solution {
             defineHealthiness(first, last, d);
         }
 
-        System.out.println(min + " " + max);
+        Collections.sort(results);
+
+        System.out.println(results.get(0) + " " + results.get(results.size() - 1));
     }
 
     private static void defineHealthiness(int first, int last, String d) {
@@ -46,18 +50,23 @@ public class Solution {
         for (int i = first; i <= last; i++) {
             if (geneList.get(i).length() == 1) {
                 for (int j = 0; j < d.length(); j++) {
-                    if (geneList.get(i) == String.valueOf(d.charAt(j))) {
+                    if (geneList.get(i).equals(String.valueOf(d.charAt(j)))) {
                         result += healthList.get(i);
                     }
                 }
             } else {
-
+                String temp = d;
+                int index = temp.indexOf(geneList.get(i));
+                int count = 0;
+                while (index != -1) {
+                    count++;
+                    temp = temp.substring(index + 1);
+                    index = temp.indexOf(geneList.get(i));
+                }
+                result += count * healthList.get(i);
             }
         }
 
-        if (result < min)
-            min = result;
-        else if (result > max)
-            max = result;
+        results.add(result);
     }
 }
