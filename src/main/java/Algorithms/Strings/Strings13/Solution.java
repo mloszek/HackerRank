@@ -23,7 +23,7 @@ public class Solution {
 
         int result = 0;
         char[] array = B.toCharArray();
-        String backToString = "";
+        String backToString;
 
         do {
             for (int i = 0; i < n; i++) {
